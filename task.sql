@@ -24,7 +24,7 @@ CREATE TABLE ProductDescription (
     ProductID INT,
     Description VARCHAR(100),
     PRIMARY KEY (ID),
-    FOREIGN KEY (CountryID) REFERENCES Countries(ID),
+    FOREIGN KEY (CountryID) REFERENCES Countries(ID)
 ) ENGINE=MyISAM;
 -- Create a table for storing logs. For now we don't need to save them, but we need to implement functionality (Columns: ID, Time, LogRecord)
 CREATE TABLE Logs (
@@ -37,6 +37,6 @@ CREATE TABLE Logs (
 CREATE TABLE ProductReporting (
     Date DATE,
     ProductName VARCHAR(100),
-    Orders INT,
+    Orders INT NOT NULL,
     PRIMARY KEY (Date, ProductName)
 ) ENGINE=CSV;
